@@ -63,6 +63,7 @@ NEWSPIDER_MODULE = 'cnblogs.spiders'
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'cnblogs.pipelines.JsonWithEncodingCnblogsPipeline': 300,
+    'cnblogs.pipelines.MySQLStoreCnblogsPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -85,3 +86,10 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE='scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 LOG_LEVEL = 'INFO'
+
+# start MySQL database configure setting
+MYSQL_HOST = 'localhost'
+MYSQL_DBNAME = 'cnblogsdb'
+MYSQL_USER = 'root'
+MYSQL_PASSWD = 'root'
+# end of MySQL database configure setting
