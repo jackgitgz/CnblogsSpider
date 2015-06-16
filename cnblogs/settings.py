@@ -52,10 +52,11 @@ COOKIES_ENABLED=False
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
 #    'cnblogs.middlewares.MyCustomDownloaderMiddleware': 543,
-    'cnblogs.middlewares.RandomUserAgent': 1,
-    #'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 110,
-    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
-    'cnblogs.middlewares.ProxyMiddleware': 100,
+    'cnblogs.middlewares.RandomUserAgent': 1, #随机user agent
+    #'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 110, #此API已经弃用
+    #'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110, #代理需要用到
+    #'cnblogs.middlewares.ProxyMiddleware': 100, #代理需要用到
+    'scrapy_crawlera.CrawleraMiddleware': 600, #crawlera代理用到
 }
 
 # Enable or disable extensions
@@ -127,3 +128,6 @@ PROXIES = [
     {'ip_port': '122.224.249.122:8088', 'user_pass': ''},
 ]
 
+CRAWLERA_ENABLED = True
+CRAWLERA_USER = '<API key>'
+CRAWLERA_PASS = '你crawlera账号的密码'
