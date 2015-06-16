@@ -14,6 +14,7 @@ BOT_NAME = 'cnblogs'
 SPIDER_MODULES = ['cnblogs.spiders']
 NEWSPIDER_MODULE = 'cnblogs.spiders'
 
+COMMANDS_MODULE = 'cnblogs.commands'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'cnblogs (+http://www.yourdomain.com)'
@@ -52,8 +53,8 @@ COOKIES_ENABLED=False
 DOWNLOADER_MIDDLEWARES = {
 #    'cnblogs.middlewares.MyCustomDownloaderMiddleware': 543,
     'cnblogs.middlewares.RandomUserAgent': 1,
-    'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 110,
-    #'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
+    #'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 110,
+    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
     'cnblogs.middlewares.ProxyMiddleware': 100,
 }
 
@@ -125,3 +126,4 @@ PROXIES = [
     {'ip_port': '122.96.59.104:80', 'user_pass': ''},
     {'ip_port': '122.224.249.122:8088', 'user_pass': ''},
 ]
+

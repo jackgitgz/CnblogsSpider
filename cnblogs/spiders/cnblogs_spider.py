@@ -27,7 +27,7 @@ class CnblogsSpider(CrawlSpider):
 			 follow=True, 
 			 callback='parse_item')
     ]
-    #print "**********CnblogsSpider**********"
+    print "**********CnblogsSpider**********"
     #定义回调函数
     #提取数据到Items里面，主要用到XPath和CSS选择器提取网页数据
     def parse_item(self, response): 
